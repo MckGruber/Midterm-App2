@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
+import mapie
+from mapie import regression
 
 ADA_BOOST = "AdaBoostClassifier"
 DT = "DecisionTreeClassifier"
