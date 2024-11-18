@@ -8,17 +8,15 @@ DT = "DecisionTreeClassifier"
 RF = "RandomForestClassifier"
 VC = "VotingClassifier"
 XG = "XGBRegressor"
-MODELS = [ADA_BOOST, DT, RF, VC, XG]
+# MODELS = [ADA_BOOST, DT, RF, VC, XG]
+MODELS = [XG]
 
 
 def get_models() -> dict:
   model_dict = {}
   for model in MODELS:
-    try:
-      with open(f"{model}.pickle", "rb") as f:
-        model_dict[model] = pickle.load(f)
-    except:
-      ()
+    with open(f"{model}.pickle", "rb") as f:
+      model_dict[model] = pickle.load(f)
   return model_dict
 
 def highlight_prediction(s: pd.Series, props=""):
