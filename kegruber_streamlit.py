@@ -69,7 +69,7 @@ alpha = st.slider("Prediction Alpha", value=0.1)
 with st.sidebar:
   st.image("traffic_sidebar.jpg")
   st.write("You can either upload your dat or manually enter input features")
-  model = st.selectbox("Select Model to use", useable_models.keys()) if len(useable_models) != 0 else useable_models[0]
+  model = st.selectbox("Select Model to use", useable_models.keys()) if len(useable_models) != 0 else useable_models[useable_models.keys()[0]]
   with st.expander("Option 1: Upload a CSV File"):
     st.write("Example DataFrame: ")
     st.write(example_data.head())
