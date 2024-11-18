@@ -10,7 +10,7 @@ VC = "VotingClassifier"
 XG = "XGBRegressor"
 MODELS = [ADA_BOOST, DT, RF, VC, XG]
 
-@st.cache_resource
+
 def get_models() -> dict:
   model_dict = {}
   for model in MODELS:
@@ -26,11 +26,11 @@ def highlight_prediction(s: pd.Series, props=""):
     s == "Normal", "background-color:lime;color:black", 
     np.where(s == "Suspect", "background-color:yellow", "background-color:orange;color:black"))
 
-@st.cache_resource
+
 def get_example_sheet() -> pd.DataFrame:
   return pd.read_csv("traffic_data_user.csv")
 
-@st.cache_resource
+
 def get_training_data() -> pd.DataFrame:
   return pd.read_csv("Traffic_Volume.csv")
 
